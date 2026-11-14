@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090b10">
+    <meta name="description" content="A small interactive space for career motivation and personal growth.">
+    <title>Next Chapter — Career Growth</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Next Chapter home">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NEXT CHAPTER</span>
+        </a>
+        <span class="top-note"><span class="status-dot"></span> YOUR GROWTH, IN MOTION</span>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-star" aria-hidden="true">✦</span> A CAREER GROWTH TOOLKIT</p>
+            <h1 id="hero-title">Make room for <span>what’s next.</span></h1>
+            <p class="hero-intro">Big careers are built one brave, curious step at a time. Make today count.</p>
+            <a class="hero-link" href="#toolkit">EXPLORE YOUR TOOLKIT <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit-core"><span>GROW</span><span>FORWARD</span></div>
+            <span class="orbit-star star-one">✦</span>
+            <span class="orbit-star star-two">✳</span>
+            <span class="orbit-label">YOUR POTENTIAL<br>HAS NO CEILING</span>
+          </div>
+          <span class="hero-index">01 / THE JOURNEY</span>
+        </section>
+
+        <section class="toolkit" id="toolkit" aria-labelledby="toolkit-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow section-eyebrow">YOUR PERSONAL GROWTH DASHBOARD</p>
+              <h2 id="toolkit-title">Small steps. <span>Real momentum.</span></h2>
+            </div>
+            <span class="section-count">05 TOOLS / ONE YOU</span>
+          </div>
+
+          <div class="tool-grid">
+            <article class="card progress-card">
+              <div class="card-topline"><span class="card-number">01</span><span class="card-tag">DAILY PRACTICE</span></div>
+              <h3>Show up for you.</h3>
+              <p class="card-copy">Every intentional action is a vote for the person you’re becoming.</p>
+              <div class="progress-readout"><strong id="progress-count">0</strong><span> / 5 growth wins today</span></div>
+              <div class="progress-track" role="progressbar" aria-label="Growth wins completed today" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+                <span class="progress-fill"></span>
+              </div>
+              <button class="button button-dark" id="log-win" type="button">LOG A GROWTH WIN <span aria-hidden="true">↗</span></button>
+              <p class="feedback" id="progress-feedback" aria-live="polite">Your next small step is waiting.</p>
+            </article>
+
+            <article class="card quote-card">
+              <div class="card-topline"><span class="card-number">02</span><span class="card-tag">A NOTE TO YOUR FUTURE SELF</span></div>
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <blockquote id="quote-text">You don’t have to see the whole staircase. Just take the first step.</blockquote>
+              <p class="quote-author" id="quote-author">— MARTIN LUTHER KING JR.</p>
+              <button class="text-button" id="new-quote" type="button">ANOTHER LITTLE NUDGE <span aria-hidden="true">↗</span></button>
+            </article>
+
+            <article class="card goals-card">
+              <div class="card-topline"><span class="card-number">03</span><span class="card-tag">YOUR NEXT MOVES</span></div>
+              <h3>Keep your goals close.</h3>
+              <p class="card-copy">Write down one thing you want to move forward.</p>
+              <form id="goal-form" class="goal-form">
+                <label class="sr-only" for="goal-input">Add a career or growth goal</label>
+                <input id="goal-input" name="goal" type="text" maxlength="80" placeholder="e.g. Ask for feedback" required>
+                <button type="submit" aria-label="Add goal">+</button>
+              </form>
+              <ul class="goal-list" id="goal-list" aria-live="polite">
+                <li><span>Make time for deep work</span><button type="button" aria-label="Remove Make time for deep work">×</button></li>
+                <li><span>Reach out to a mentor</span><button type="button" aria-label="Remove Reach out to a mentor">×</button></li>
+              </ul>
+            </article>
+
+            <article class="card timer-card">
+              <div class="card-topline"><span class="card-number">04</span><span class="card-tag">A MOMENT OF FOCUS</span></div>
+              <h3>Give one thing your all.</h3>
+              <p class="card-copy">A little focused time can create a lot of clarity.</p>
+              <div class="timer-display" id="timer-display" role="timer" aria-label="25 minutes 00 seconds">25:00</div>
+              <div class="timer-controls">
+                <button class="button button-light" id="timer-toggle" type="button">START FOCUS</button>
+                <button class="reset-button" id="timer-reset" type="button">RESET</button>
+              </div>
+              <p class="feedback" id="timer-feedback" aria-live="polite">Twenty-five minutes. Just for you.</p>
+            </article>
+
+            <article class="card path-card">
+              <div class="card-topline"><span class="card-number">05</span><span class="card-tag">YOUR GROWTH PATH</span></div>
+              <h3>Progress has many paths.</h3>
+              <p class="card-copy">Pick a prompt to get your next idea in motion.</p>
+              <div class="path-list">
+                <div class="path-item">
+                  <button class="path-toggle" type="button" aria-expanded="false" aria-controls="path-skill"><span>01</span> Build a new skill <span class="path-plus">+</span></button>
+                  <p class="path-detail" id="path-skill" hidden>Choose one skill that would make your work easier or more meaningful. Spend 15 minutes exploring it this week.</p>
+                </div>
+                <div class="path-item">
+                  <button class="path-toggle" type="button" aria-expanded="false" aria-controls="path-people"><span>02</span> Find your people <span class="path-plus">+</span></button>
+                  <p class="path-detail" id="path-people" hidden>Think of someone whose work you admire. Send a note, ask a thoughtful question, and start a real conversation.</p>
+                </div>
+                <div class="path-item">
+                  <button class="path-toggle" type="button" aria-expanded="false" aria-controls="path-reflect"><span>03</span> Make space to reflect <span class="path-plus">+</span></button>
+                  <p class="path-detail" id="path-reflect" hidden>Write down one thing you learned, one thing you’re proud of, and one thing you want to try next.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>KEEP BECOMING.</span>
+        <span>ONE STEP AT A TIME <span class="footer-star" aria-hidden="true">✦</span></span>
+      </footer>
+    </div>
+  </body>
+</html>
